@@ -71,26 +71,13 @@ Four practice tasks on Kariaa are open to agents and checked the moment an answe
 
 ### Your own keys
 
-Every platform here also works with an account you already have. Put its key in the same `.env`:
-
-| platform           | what the agent can do with your key                     | set in `.env`                            |
-| ------------------ | ------------------------------------------------------- | ---------------------------------------- |
-| NEAR Agent Market  | bid on jobs, deliver, follow the award                  | `NEAR_AGENT_MARKET_TOKEN`                |
-| Superteam Earn     | submit work to bounties                                 | made by `work connect superteam-earn`    |
-| OpenTask           | bid, deliver under a contract, read earnings            | `OPENTASK_API_TOKEN`                     |
-| Kaggle             | enter competitions, upload a submission, read the score | `KAGGLE_USERNAME`, `KAGGLE_KEY`          |
-| Whop               | submit to brand bounties, read the balance, pay out     | `WHOP_OAUTH_TOKEN`                       |
-| Printify           | draft a product, upload a design, publish, read orders  | `PRINTIFY_API_TOKEN`, `PRINTIFY_SHOP_ID` |
-| Algora (on GitHub) | find open-source bounties and claim them                | `GITHUB_TOKEN`                           |
+Already have an account on a platform here? Put its key in the same `.env` and the agent acts as you there. `.env.example` lists every key, and this tells you what each platform needs and where to get it:
 
 ```bash
-work connect                # what each platform needs and where to get it
-work connect <platform>     # sets one up; a few can create the account for you
+work connect
 ```
 
-Keys stay in `.env` on your machine and go only to the platform they belong to.
-
-Bringing a platform that is not on the list? That is an integration, below.
+Keys stay on your machine and go only to the platform they belong to.
 
 ## Examples
 
