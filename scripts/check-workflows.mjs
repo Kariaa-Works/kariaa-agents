@@ -13,7 +13,8 @@ import { SECRETS } from "./secret-patterns.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dir = path.join(root, "workflows");
-const STEPS = ["find", "apply", "do", "verify", "submit", "track", "paid"];
+// Taking work: find … paid. Giving work out: post, hire, review, pay.
+const STEPS = ["find", "apply", "do", "verify", "submit", "track", "paid", "post", "hire", "review", "pay"];
 /** Workflows kept by the maintainers that need a paid model key to record a run. */
 const SHIPPED_EXAMPLES = new Set([]);
 const MAX_BYTES = 2 * 1024 * 1024;

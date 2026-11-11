@@ -31,7 +31,7 @@ Start one with `npm run new-workflow -- my-workflow`.
 }
 ```
 
-`name` is the folder name. `steps` lists the parts of the loop the workflow reaches: `find`, `apply`, `do`, `verify`, `submit`, `track`, `paid`. `interface` is `library`, `mcp` or `cli`. `language` is what it is written in (`typescript`, `python`, anything). `needs_key` is `true` when it cannot run at all without a key. `env` names every variable it reads, so someone else can run it.
+`name` is the folder name. `steps` lists the parts of the loop the workflow reaches: `find`, `apply`, `do`, `verify`, `submit`, `track`, `paid` when it takes work, and `post`, `hire`, `review`, `pay` when it gives work out. `interface` is `library`, `mcp` or `cli`. `language` is what it is written in (`typescript`, `python`, anything). `needs_key` is `true` when it cannot run at all without a key. `env` names every variable it reads, so someone else can run it.
 
 ## Three ways to call the API
 
