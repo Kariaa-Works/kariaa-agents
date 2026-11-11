@@ -1,0 +1,1105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kariaa Agents · runs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --paper: #f7f2e8;
+        --paper-2: #efe8d9;
+        --card: #fffdf8;
+        --ink: #1f1b16;
+        --ink-2: #5d554a;
+        --line: #d9cfbb;
+        --red: #d4261c;
+        --red-soft: #fbe3df;
+        --green: #2f7d4f;
+        --green-soft: #dff1e5;
+        --amber: #a8690a;
+        --amber-soft: #f8ecd2;
+        --hand: "Kalam", "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive;
+        --body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        --mono: ui-monospace, "Cascadia Code", Consolas, Menlo, monospace;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          --paper: #191612;
+          --paper-2: #221e19;
+          --card: #26221c;
+          --ink: #f1eadc;
+          --ink-2: #b0a696;
+          --line: #3d362c;
+          --red: #ff6257;
+          --red-soft: #45211d;
+          --green: #6fcf97;
+          --green-soft: #1d3a2a;
+          --amber: #f0b44c;
+          --amber-soft: #40321a;
+        }
+      }
+      :root[data-theme="dark"] {
+        --paper: #191612;
+        --paper-2: #221e19;
+        --card: #26221c;
+        --ink: #f1eadc;
+        --ink-2: #b0a696;
+        --line: #3d362c;
+        --red: #ff6257;
+        --red-soft: #45211d;
+        --green: #6fcf97;
+        --green-soft: #1d3a2a;
+        --amber: #f0b44c;
+        --amber-soft: #40321a;
+      }
+      * {
+        box-sizing: border-box;
+        scrollbar-color: var(--line) transparent;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font: 15px/1.45 var(--body);
+        background-image: linear-gradient(var(--paper-2) 1px, transparent 1px);
+        background-size: 100% 32px;
+      }
+      button {
+        font: inherit;
+        color: inherit;
+        cursor: pointer;
+      }
+      .wrap {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 20px 16px 48px;
+      }
+      header.top {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 8px 16px;
+        margin-bottom: 14px;
+      }
+      h1 {
+        font: 700 30px/1.1 var(--hand);
+        margin: 0;
+      }
+      h1 span {
+        color: var(--red);
+      }
+      .sub {
+        color: var(--ink-2);
+      }
+      .theme {
+        margin-left: auto;
+        border: 1.5px solid var(--line);
+        background: var(--card);
+        border-radius: 999px;
+        padding: 4px 12px;
+      }
+      /* run picker */
+      .runs {
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+        padding: 4px 2px 12px;
+        scrollbar-width: thin;
+      }
+      .run {
+        flex: 0 0 auto;
+        min-width: 190px;
+        max-width: 250px;
+        text-align: left;
+        background: var(--card);
+        border: 1.5px solid var(--line);
+        border-radius: 12px 14px 10px 16px;
+        padding: 9px 12px;
+      }
+      .run[aria-pressed="true"] {
+        border-color: var(--red);
+        box-shadow: 3px 3px 0 var(--red);
+      }
+      .run b {
+        display: block;
+        font: 700 17px/1.2 var(--hand);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .run small {
+        color: var(--ink-2);
+        display: block;
+      }
+      .tag {
+        display: inline-block;
+        font-size: 11px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        padding: 1px 7px;
+        border-radius: 999px;
+        background: var(--paper-2);
+        color: var(--ink-2);
+        margin-bottom: 3px;
+      }
+      .tag.live {
+        background: var(--red);
+        color: #fff;
+        animation: blink 1.2s infinite;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0.55;
+        }
+      }
+      /* the loop */
+      .loop {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 0;
+        background: var(--card);
+        border: 1.5px solid var(--line);
+        border-radius: 16px 12px 18px 12px;
+        padding: 14px 8px 12px;
+        margin-bottom: 14px;
+      }
+      .stop {
+        position: relative;
+        text-align: center;
+        padding: 0 4px;
+      }
+      .stop::before {
+        content: "";
+        position: absolute;
+        top: 19px;
+        left: -50%;
+        width: 100%;
+        border-top: 2px dashed var(--line);
+      }
+      .stop:first-child::before {
+        display: none;
+      }
+      .stop.done::before {
+        border-top: 2px solid var(--red);
+      }
+      .dot {
+        position: relative;
+        z-index: 1;
+        width: 40px;
+        height: 40px;
+        margin: 0 auto 4px;
+        border-radius: 50%;
+        border: 2px solid var(--line);
+        background: var(--paper);
+        display: grid;
+        place-items: center;
+        font: 700 16px var(--mono);
+        color: var(--ink-2);
+        transition:
+          transform 0.2s,
+          background 0.2s;
+      }
+      .stop.done .dot {
+        border-color: var(--red);
+        color: var(--red);
+        background: var(--red-soft);
+      }
+      .stop.now .dot {
+        background: var(--red);
+        color: #fff;
+        border-color: var(--red);
+        transform: scale(1.18);
+      }
+      .stop b {
+        font: 700 17px var(--hand);
+        display: block;
+      }
+      .stop small {
+        color: var(--ink-2);
+        font-size: 12px;
+      }
+      @media (max-width: 640px) {
+        .loop {
+          grid-template-columns: repeat(3, 1fr);
+          row-gap: 12px;
+        }
+        .stop::before {
+          display: none;
+        }
+        .stop small {
+          display: none;
+        }
+        h1 {
+          font-size: 24px;
+        }
+      }
+      /* stats + controls */
+      .bar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 14px;
+        align-items: center;
+        margin-bottom: 14px;
+      }
+      .ctl {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex: 1 1 320px;
+        min-width: 0;
+      }
+      .ctl button {
+        border: 1.5px solid var(--ink);
+        background: var(--card);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-weight: 600;
+      }
+      .ctl button.primary {
+        background: var(--red);
+        border-color: var(--red);
+        color: #fff;
+      }
+      .ctl input[type="range"] {
+        flex: 1;
+        min-width: 80px;
+        accent-color: var(--red);
+      }
+      .ctl output {
+        font: 12px var(--mono);
+        color: var(--ink-2);
+        white-space: nowrap;
+      }
+      .stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .stat {
+        background: var(--card);
+        border: 1.5px solid var(--line);
+        border-radius: 10px;
+        padding: 4px 11px;
+        white-space: nowrap;
+      }
+      .stat b {
+        font: 700 18px var(--hand);
+        margin-right: 4px;
+      }
+      .stat.good b {
+        color: var(--green);
+      }
+      .stat.bad b {
+        color: var(--red);
+      }
+      /* main grid */
+      .main {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 380px;
+        gap: 14px;
+        align-items: start;
+      }
+      @media (max-width: 980px) {
+        .main {
+          grid-template-columns: 1fr;
+        }
+      }
+      .board {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(150px, 1fr));
+        gap: 10px;
+        overflow-x: auto;
+        padding-bottom: 6px;
+      }
+      .col {
+        background: color-mix(in srgb, var(--card) 70%, transparent);
+        border: 1.5px dashed var(--line);
+        border-radius: 12px;
+        padding: 8px;
+        min-height: 220px;
+      }
+      .col h3 {
+        margin: 0 0 8px;
+        font: 700 16px var(--hand);
+        display: flex;
+        justify-content: space-between;
+      }
+      .col h3 i {
+        font: 12px var(--mono);
+        color: var(--ink-2);
+        font-style: normal;
+      }
+      .job {
+        background: var(--card);
+        border: 1.5px solid var(--line);
+        border-left: 4px solid var(--src, var(--ink-2));
+        border-radius: 8px;
+        padding: 6px 8px;
+        margin-bottom: 7px;
+        font-size: 13px;
+        animation: drop 0.35s ease-out;
+      }
+      .job.fresh {
+        box-shadow: 2px 2px 0 var(--red);
+      }
+      @keyframes drop {
+        from {
+          opacity: 0;
+          transform: translateY(-8px) rotate(-1deg);
+        }
+      }
+      .job b {
+        display: block;
+        line-height: 1.25;
+      }
+      .job small {
+        color: var(--ink-2);
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .pill {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 700;
+        border-radius: 999px;
+        padding: 0 7px;
+        margin-top: 3px;
+      }
+      .pill.pass {
+        background: var(--green-soft);
+        color: var(--green);
+      }
+      .pill.fail {
+        background: var(--red-soft);
+        color: var(--red);
+      }
+      .pill.uncertain {
+        background: var(--amber-soft);
+        color: var(--amber);
+      }
+      .more {
+        color: var(--ink-2);
+        font-size: 12px;
+        text-align: center;
+      }
+      aside {
+        background: var(--card);
+        border: 1.5px solid var(--line);
+        border-radius: 12px;
+        padding: 10px;
+      }
+      aside h2,
+      section h2 {
+        font: 700 20px var(--hand);
+        margin: 0 0 8px;
+      }
+      .calls {
+        max-height: 520px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .call {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 5px 8px;
+        font-size: 13px;
+        background: var(--paper);
+      }
+      .call.bad {
+        border-color: var(--red);
+        background: var(--red-soft);
+      }
+      .call .row {
+        display: flex;
+        gap: 6px;
+        align-items: baseline;
+      }
+      .call code {
+        font: 600 13px var(--mono);
+      }
+      .call .ms {
+        margin-left: auto;
+        font: 11px var(--mono);
+        color: var(--ink-2);
+        white-space: nowrap;
+      }
+      .call p {
+        margin: 2px 0 0;
+        color: var(--ink-2);
+        overflow-wrap: anywhere;
+      }
+      .call details {
+        margin-top: 3px;
+      }
+      .call summary {
+        cursor: pointer;
+        color: var(--ink-2);
+        font-size: 12px;
+      }
+      .call pre {
+        font: 11px/1.4 var(--mono);
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        margin: 4px 0 0;
+        max-height: 240px;
+        overflow: auto;
+      }
+      .step {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--red);
+        font-weight: 700;
+      }
+      .sources {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 12px;
+      }
+      .src {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        border: 1.5px solid var(--line);
+        background: var(--card);
+        border-radius: 999px;
+        padding: 2px 10px 2px 6px;
+        font-size: 13px;
+      }
+      .src i {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--src);
+      }
+      .src.down {
+        opacity: 0.6;
+        text-decoration: line-through;
+      }
+      /* gallery */
+      section.gallery {
+        margin-top: 26px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background: var(--card);
+        border: 1.5px solid var(--line);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .scroll {
+        overflow-x: auto;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 7px 10px;
+        border-bottom: 1px solid var(--line);
+        white-space: nowrap;
+      }
+      th {
+        font: 700 15px var(--hand);
+        color: var(--ink-2);
+      }
+      td.num,
+      th.num {
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+      }
+      td.wide {
+        white-space: normal;
+        min-width: 220px;
+        color: var(--ink-2);
+      }
+      tr.row {
+        cursor: pointer;
+      }
+      tr.row:hover {
+        background: var(--paper-2);
+      }
+      .empty {
+        padding: 40px 16px;
+        text-align: center;
+        color: var(--ink-2);
+        border: 1.5px dashed var(--line);
+        border-radius: 12px;
+        background: var(--card);
+      }
+      .empty code {
+        font: 13px var(--mono);
+        background: var(--paper-2);
+        padding: 2px 6px;
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="top">
+        <h1>Kariaa <span>Agents</span></h1>
+        <span class="sub">Watch an agent find work, apply, do it and send it in.</span>
+        <button class="theme" id="theme" type="button">Dark</button>
+      </header>
+
+      <nav class="runs" id="runs" aria-label="Runs"></nav>
+
+      <div id="stage" hidden>
+        <div class="loop" id="loop"></div>
+        <div class="bar">
+          <div class="ctl">
+            <button class="primary" id="play" type="button">Play</button>
+            <button id="speed" type="button" title="Playback speed">1×</button>
+            <input id="seek" type="range" min="0" max="0" value="0" aria-label="Position in the run" />
+            <output id="pos">0 / 0</output>
+          </div>
+          <div class="stats" id="stats"></div>
+        </div>
+        <div class="main">
+          <div>
+            <div class="board" id="board"></div>
+            <div class="sources" id="sources"></div>
+          </div>
+          <aside>
+            <h2>Calls</h2>
+            <div class="calls" id="calls"></div>
+          </aside>
+        </div>
+      </div>
+      <div class="empty" id="empty" hidden>No runs yet. Record one: <code>work trace -- npx tsx workflows/scout/run.ts</code></div>
+
+      <section class="gallery">
+        <h2>Every run</h2>
+        <div class="scroll"><table id="table"></table></div>
+      </section>
+    </div>
+
+    <script>
+      "use strict";
+      const STEPS = [
+        ["find", "Find", "search and read"],
+        ["apply", "Apply", "answer and bid"],
+        ["do", "Do", "add the work"],
+        ["verify", "Verify", "check before sending"],
+        ["submit", "Submit", "send it in"],
+        ["paid", "Paid", "accepted and earned"],
+      ];
+      const COLUMNS = [
+        ["found", "Found"],
+        ["read", "Read"],
+        ["checked", "Checked"],
+        ["applied", "Applied"],
+        ["sent", "Sent"],
+      ];
+      const RANK = { found: 0, read: 1, checked: 2, applied: 3, sent: 4, posted: 0, offers: 1, awarded: 2, delivered: 3, paid: 4 };
+      // A run that gives work out (posts a job, hires, pays) gets its own track and board.
+      const BUY_STEPS = [
+        ["post", "Post", "write the brief"],
+        ["hire", "Hire", "read offers, pick one"],
+        ["review", "Review", "judge the work"],
+        ["pay", "Pay", "confirm, then release"],
+      ];
+      const BUY_COLUMNS = [
+        ["posted", "Posted"],
+        ["offers", "Offers in"],
+        ["awarded", "Awarded"],
+        ["delivered", "Accepted"],
+        ["paid", "Paid"],
+      ];
+      const BUY = new Set(["post", "hire", "review", "pay"]);
+      const PALETTE = ["#d4261c", "#2f6fb5", "#2f7d4f", "#a8690a", "#7b4ab8", "#0f8a8a", "#c2477f", "#6b6b1f", "#b3541e", "#48607a"];
+      const $ = (id) => document.getElementById(id);
+      const el = (tag, cls, text) => {
+        const node = document.createElement(tag);
+        if (cls) node.className = cls;
+        if (text !== undefined) node.textContent = text;
+        return node;
+      };
+
+      let runs = [];
+      let current = null; // { ...run, events }
+      let calls = [];
+      let cursor = 0;
+      let timer = null;
+      let playing = false;
+      let speed = 1;
+      let staticMode = false;
+      let loadedOnce = false;
+      let poll = null;
+      const colors = new Map();
+      const colorOf = (source) => {
+        if (!colors.has(source)) colors.set(source, PALETTE[colors.size % PALETTE.length]);
+        return colors.get(source);
+      };
+      const sourceOf = (id) => (typeof id === "string" && id.includes(":") ? id.slice(0, id.indexOf(":")) : "");
+
+      async function loadRuns() {
+        try {
+          const res = await fetch("api/runs", { cache: "no-store" });
+          if (!res.ok) throw new Error(String(res.status));
+          runs = (await res.json()).runs;
+        } catch {
+          // No server behind the page: it was exported as static files. A server that
+          // is only restarting keeps the runs already shown and is asked again later.
+          if (!loadedOnce) {
+            try {
+              runs = (await (await fetch("runs.json", { cache: "no-store" })).json()).runs;
+              staticMode = true;
+            } catch {
+              runs = [];
+            }
+          }
+        }
+        loadedOnce = true;
+        drawRuns();
+        drawTable();
+        $("empty").hidden = runs.length > 0;
+        if (!current && runs.length) {
+          const wanted = new URLSearchParams(location.search).get("run");
+          const first = runs.find((r) => r.id === wanted) || runs.find((r) => r.live) || runs[0];
+          await open(first.id, !first.live);
+        }
+      }
+
+      async function fetchRun(id) {
+        if (staticMode) return runs.find((r) => r.id === id);
+        const res = await fetch("api/run?id=" + encodeURIComponent(id), { cache: "no-store" });
+        return res.ok ? res.json() : null;
+      }
+
+      async function open(id, fromStart) {
+        const run = await fetchRun(id);
+        if (!run) return;
+        stop();
+        current = run;
+        calls = run.events.filter((e) => e.type === "call");
+        cursor = fromStart && !run.live ? 0 : calls.length;
+        $("stage").hidden = false;
+        $("seek").max = String(calls.length);
+        drawRuns();
+        draw();
+        clearInterval(poll);
+        if (run.live && !staticMode) {
+          poll = setInterval(async () => {
+            const next = await fetchRun(id);
+            if (!next || !current || current.id !== id) return;
+            const nextCalls = next.events.filter((e) => e.type === "call");
+            // Nothing new: leave the page alone so an opened call stays open.
+            if (nextCalls.length === calls.length && next.live === current.live) return;
+            const atEnd = cursor >= calls.length;
+            current = next;
+            calls = nextCalls;
+            $("seek").max = String(calls.length);
+            if (atEnd) cursor = calls.length;
+            draw();
+            if (!next.live) {
+              clearInterval(poll);
+              loadRuns();
+            }
+          }, 1200);
+        } else if (fromStart && calls.length) play();
+      }
+
+      /** The board and counters after the first n calls. */
+      function stateAt(n) {
+        const jobs = new Map();
+        const apps = new Map();
+        const sources = new Map();
+        const steps = { find: 0, apply: 0, do: 0, verify: 0, submit: 0, paid: 0, post: 0, hire: 0, review: 0, pay: 0 };
+        const stats = {
+          calls: n,
+          failed: 0,
+          found: 0,
+          applied: 0,
+          pass: 0,
+          fail: 0,
+          submitted: 0,
+          accepted: 0,
+          posted: 0,
+          offers: 0,
+          awarded: 0,
+          released: 0,
+        };
+        const buying = calls.some((c) => BUY.has(c.step));
+        let last = null;
+        const touch = (id, column, patch) => {
+          if (typeof id !== "string") return;
+          const job = jobs.get(id) || { id, title: id, column: "found", order: jobs.size };
+          if (RANK[column] > RANK[job.column]) job.column = column;
+          Object.assign(job, patch || {});
+          job.touched = n;
+          jobs.set(id, job);
+          const s = sourceOf(id);
+          if (s) sources.set(s, sources.get(s) || { count: 0, down: false });
+          return job;
+        };
+        for (let i = 0; i < n; i++) {
+          const e = calls[i];
+          const fresh = i === n - 1;
+          if (e.step in steps) steps[e.step] += 1;
+          last = e;
+          if (!e.ok) {
+            stats.failed += 1;
+            continue;
+          }
+          const out = e.output || {};
+          const arg = Array.isArray(e.input) ? e.input[0] : undefined;
+          if (e.op === "search" && Array.isArray(out.jobs)) {
+            for (const j of out.jobs) {
+              if (!j || typeof j !== "object") continue;
+              const isNew = !jobs.has(j.id);
+              const job = touch(j.id, "found", { title: j.title, org: j.org, pay: j.pay });
+              if (job && isNew) {
+                job.fresh = fresh;
+                const s = sources.get(sourceOf(j.id));
+                if (s) s.count += 1;
+              }
+            }
+            for (const p of out.partial || []) sources.set(p.connector, { count: (sources.get(p.connector) || {}).count || 0, down: true });
+          } else if (e.op === "get") {
+            const job = touch(out.id || arg, "read", { title: out.title, org: out.org, pay: out.pay && out.pay.text });
+            if (job) job.fresh = fresh;
+          } else if (e.op === "verify") {
+            const job = touch(out.job_id || arg, "checked", { outcome: out.outcome, note: out.summary });
+            if (job) job.fresh = fresh;
+            if (out.outcome === "pass") stats.pass += 1;
+            if (out.outcome === "fail") stats.fail += 1;
+          } else if (e.op === "apply") {
+            stats.applied += 1;
+            apps.set(out.id, out.job_id || arg);
+            const job = touch(out.job_id || arg, "applied", { stage: out.stage });
+            if (job) job.fresh = fresh;
+          } else if (e.op === "upload" || e.op === "remove") {
+            const job = touch(apps.get(arg), "applied", { stage: "work added" });
+            if (job) job.fresh = fresh;
+          } else if (e.op === "submit" || e.op === "status") {
+            if (e.op === "submit") stats.submitted += 1;
+            if (out.id && out.job_id) apps.set(out.id, out.job_id);
+            const job = touch(apps.get(arg) || out.job_id, e.op === "submit" ? "sent" : "applied", { stage: out.stage });
+            if (job) job.fresh = fresh;
+            if (out.stage === "accepted" && job && !job.accepted) {
+              job.accepted = true;
+              job.column = "sent";
+              stats.accepted += 1;
+              steps.paid += 1;
+            }
+          } else if (e.op === "post") {
+            stats.posted += 1;
+            const job = touch(out.id, "posted", {
+              title: out.title,
+              pay: out.budget ? `${out.budget.amount} ${out.budget.currency}` : "",
+              stage: out.status,
+            });
+            if (job) job.fresh = fresh;
+          } else if (e.op === "postings" && Array.isArray(out.postings)) {
+            for (const p of out.postings) if (p && typeof p === "object") touch(p.id, "posted", { title: p.title, stage: p.status });
+          } else if (e.op === "offers" && out.posting) {
+            const count = Array.isArray(out.offers) ? out.offers.filter((o) => typeof o === "object").length : 0;
+            stats.offers = Math.max(stats.offers, count);
+            const job = touch(out.posting.id, count ? "offers" : "posted", {
+              title: out.posting.title,
+              org: `${count} offer${count === 1 ? "" : "s"}`,
+              stage: out.posting.status,
+            });
+            if (job) job.fresh = fresh;
+          } else if (e.op === "award") {
+            stats.awarded += 1;
+            const job = touch(out.id || arg, "awarded", { title: out.title, stage: out.status });
+            if (job) job.fresh = fresh;
+          } else if (e.op === "review") {
+            const job = touch(out.id || arg, out.status === "completed" ? "delivered" : "awarded", { title: out.title, stage: out.status });
+            if (job) job.fresh = fresh;
+          } else if (e.op === "pay") {
+            const id = out.posting_id || arg;
+            const sum = out.amount ? `${out.amount.amount} ${out.amount.currency}` : "";
+            if (out.status === "released") {
+              stats.released += 1;
+              const job = touch(id, "paid", { stage: `paid ${sum}`.trim(), accepted: true });
+              if (job) job.fresh = fresh;
+            } else {
+              const job = touch(id, "posted", {
+                stage: out.status === "confirm_needed" ? `confirm ${out.action || "payment"} ${sum}`.trim() : `${out.status} ${sum}`.trim(),
+              });
+              if (job) job.fresh = fresh;
+            }
+          } else if (e.op === "cancelPosting") {
+            const job = touch(out.id || arg, "posted", { stage: "cancelled" });
+            if (job) job.fresh = fresh;
+          } else if (e.op === "list" && Array.isArray(out.applications)) {
+            for (const a of out.applications) {
+              if (!a || typeof a !== "object") continue;
+              apps.set(a.id, a.job_id);
+              touch(a.job_id, a.stage === "in_review" || a.stage === "accepted" ? "sent" : "applied", {
+                title: a.job_title || a.job_id,
+                stage: a.stage,
+              });
+            }
+          }
+        }
+        stats.found = jobs.size;
+        return { jobs: [...jobs.values()], sources, steps, stats, last, buying };
+      }
+
+      function describe(e) {
+        const arg = Array.isArray(e.input) ? e.input[0] : undefined;
+        const out = e.output || {};
+        if (!e.ok) return e.error ? e.error.code + ": " + e.error.message : "failed";
+        switch (e.op) {
+          case "search":
+            return `${arg && arg.query ? "“" + arg.query + "”" : "open work"} → ${out.count ?? 0} results${(out.partial || []).length ? `, ${(out.partial || []).length} silent` : ""}`;
+          case "get":
+            return out.title || String(arg);
+          case "verify":
+            return `${out.outcome}: ${out.summary || ""}`;
+          case "apply":
+            return `${out.job_title || out.job_id || arg} → ${out.stage}`;
+          case "upload":
+            return out.file ? `added ${out.file.name}` : "work added";
+          case "submit":
+          case "status":
+            return `${out.job_title || out.job_id || arg} is ${out.stage}`;
+          case "list":
+            return `${(out.applications || []).length} applications`;
+          case "accounts":
+            return `${Array.isArray(out) ? out.length : 0} accounts`;
+          case "earnings":
+            return `${(out.earnings || []).length} accounts with earnings`;
+          case "post":
+            return `${out.title || ""} · ${out.status || ""}`;
+          case "offers":
+            return `${(out.offers || []).length} offers on ${out.posting ? out.posting.title : arg}`;
+          case "award":
+          case "review":
+          case "cancelPosting":
+            return `${out.title || arg} is ${out.status || ""}`;
+          case "pay":
+            return out.status === "confirm_needed"
+              ? `asked to confirm: ${out.action || "pay"} ${out.amount ? out.amount.amount + " " + out.amount.currency : ""}; nothing moved`
+              : `${out.status} ${out.amount ? out.amount.amount + " " + out.amount.currency : ""}${out.to ? " to " + out.to : ""}`;
+          default:
+            return typeof arg === "string" ? arg : "";
+        }
+      }
+
+      function draw() {
+        if (!current) return;
+        const s = stateAt(cursor);
+        // loop
+        const loop = $("loop");
+        loop.replaceChildren();
+        const nowStep = s.last ? (s.last.step === "track" || s.last.step === "account" ? null : s.last.step) : null;
+        const track = s.buying ? BUY_STEPS : STEPS;
+        loop.style.gridTemplateColumns = `repeat(${track.length}, 1fr)`;
+        track.forEach(([key, label, hint], i) => {
+          const stop = el("div", "stop" + (s.steps[key] ? " done" : "") + (playing && nowStep === key ? " now" : ""));
+          stop.append(el("div", "dot", s.steps[key] ? String(s.steps[key]) : String(i + 1)), el("b", "", label), el("small", "", hint));
+          loop.append(stop);
+        });
+        // stats
+        const stats = $("stats");
+        stats.replaceChildren();
+        const stat = (n, label, cls) => {
+          const node = el("span", "stat" + (cls ? " " + cls : ""));
+          node.append(el("b", "", String(n)), document.createTextNode(label));
+          stats.append(node);
+        };
+        if (s.buying) {
+          stat(s.stats.posted, "posted");
+          stat(s.stats.offers, "offers");
+          stat(s.stats.awarded, "awarded");
+          stat(s.stats.released, "paid", s.stats.released ? "good" : "");
+        }
+        if (!s.buying) stat(s.stats.found, "found");
+        if (!s.buying) stat(s.stats.applied, "applied");
+        if (!s.buying) stat(s.stats.pass, "checks passed", s.stats.pass ? "good" : "");
+        if (s.stats.fail) stat(s.stats.fail, "checks failed", "bad");
+        if (!s.buying) stat(s.stats.submitted, "submitted");
+        if (!s.buying) stat(s.stats.accepted, "accepted", s.stats.accepted ? "good" : "");
+        if (s.stats.failed) stat(s.stats.failed, "calls failed", "bad");
+        // board
+        const board = $("board");
+        board.replaceChildren();
+        for (const [key, label] of s.buying ? BUY_COLUMNS : COLUMNS) {
+          const col = el("div", "col");
+          const items = s.jobs.filter((j) => j.column === key).sort((a, b) => b.touched - a.touched || a.order - b.order);
+          const head = el("h3", "", label);
+          head.append(el("i", "", String(items.length)));
+          col.append(head);
+          for (const job of items.slice(0, 8)) {
+            const card = el("div", "job" + (job.fresh ? " fresh" : ""));
+            card.style.setProperty("--src", colorOf(sourceOf(job.id)));
+            card.append(el("b", "", job.title || job.id));
+            card.append(
+              el("small", "", [job.org, typeof job.pay === "string" ? job.pay : "", sourceOf(job.id)].filter(Boolean).join(" · ")),
+            );
+            if (job.outcome) card.append(el("span", "pill " + job.outcome, "check: " + job.outcome));
+            if (job.stage) card.append(el("span", "pill " + (job.accepted ? "pass" : "uncertain"), String(job.stage).replace(/_/g, " ")));
+            card.title = job.note || job.id;
+            col.append(card);
+          }
+          if (items.length > 8) col.append(el("div", "more", `+ ${items.length - 8} more`));
+          board.append(col);
+        }
+        // sources
+        const sources = $("sources");
+        sources.replaceChildren();
+        [...s.sources.entries()]
+          .sort((a, b) => b[1].count - a[1].count)
+          .forEach(([name, info]) => {
+            const chip = el("span", "src" + (info.down && !info.count ? " down" : ""));
+            chip.style.setProperty("--src", colorOf(name));
+            chip.append(el("i"), document.createTextNode(`${name} ${info.count || ""}`.trim()));
+            sources.append(chip);
+          });
+        // calls
+        const list = $("calls");
+        list.replaceChildren();
+        for (let i = cursor - 1; i >= Math.max(0, cursor - 60); i--) {
+          const e = calls[i];
+          const item = el("div", "call" + (e.ok ? "" : " bad"));
+          const row = el("div", "row");
+          row.append(el("span", "step", e.step), el("code", "", e.op), el("span", "ms", e.ms + " ms"));
+          item.append(row, el("p", "", describe(e)));
+          const details = el("details");
+          details.append(el("summary", "", "input and result"));
+          details.addEventListener("toggle", () => {
+            if (details.open && !details.querySelector("pre"))
+              details.append(
+                el("pre", "", JSON.stringify({ input: e.input, [e.ok ? "output" : "error"]: e.ok ? e.output : e.error }, null, 2)),
+              );
+          });
+          item.append(details);
+          list.append(item);
+        }
+        $("seek").value = String(cursor);
+        $("pos").textContent = `${cursor} / ${calls.length}` + (current.live ? " · live" : "");
+        $("play").textContent = playing ? "Pause" : cursor >= calls.length ? "Replay" : "Play";
+      }
+
+      function stop() {
+        playing = false;
+        clearTimeout(timer);
+      }
+      function tick() {
+        if (!playing) return;
+        if (cursor >= calls.length) {
+          stop();
+          draw();
+          return;
+        }
+        cursor += 1;
+        draw();
+        const here = calls[cursor - 1];
+        const next = calls[cursor];
+        const gap = next ? Date.parse(next.ts) - Date.parse(here.ts) : 0;
+        timer = setTimeout(tick, Math.min(1600, Math.max(450, gap)) / speed);
+      }
+      function play() {
+        if (cursor >= calls.length) cursor = 0;
+        playing = true;
+        draw();
+        timer = setTimeout(tick, 350 / speed);
+      }
+
+      function seconds(ms) {
+        return ms >= 60000 ? Math.round(ms / 6000) / 10 + " min" : Math.round(ms / 100) / 10 + " s";
+      }
+      function drawRuns() {
+        const nav = $("runs");
+        nav.replaceChildren();
+        const label = { yours: "your run", workflow: "workflow", sample: "sample" };
+        for (const run of runs) {
+          const button = el("button", "run");
+          button.type = "button";
+          button.setAttribute("aria-pressed", String(Boolean(current && current.id === run.id)));
+          button.append(el("span", "tag" + (run.live ? " live" : ""), run.live ? "live" : label[run.source] || run.source));
+          button.append(el("b", "", run.title));
+          const s = run.summary;
+          button.append(el("small", "", `${s.calls} calls · ${s.found} found · ${s.connectors.length} sources`));
+          button.addEventListener("click", () => open(run.id, !run.live));
+          nav.append(button);
+        }
+      }
+      function drawTable() {
+        const table = $("table");
+        table.replaceChildren();
+        if (!runs.length) return;
+        const head = el("tr");
+        [
+          ["Run", ""],
+          ["By", ""],
+          ["What it does", ""],
+          ["Found", "num"],
+          ["Sources", "num"],
+          ["Applied", "num"],
+          ["Checks passed", "num"],
+          ["Submitted", "num"],
+          ["Accepted", "num"],
+          ["Calls", "num"],
+          ["Time", "num"],
+        ].forEach(([text, cls]) => head.append(el("th", cls, text)));
+        table.append(head);
+        for (const run of runs) {
+          const s = run.summary;
+          const w = run.workflow || {};
+          const row = el("tr", "row");
+          row.append(
+            el("td", "", run.title),
+            el("td", "", w.team || (run.source === "yours" ? "you" : "")),
+            el("td", "wide", w.description || ""),
+            el("td", "num", String(s.found)),
+            el("td", "num", String(s.connectors.length)),
+            el("td", "num", String(s.applied)),
+            el("td", "num", String(s.verified.pass)),
+            el("td", "num", String(s.submitted)),
+            el("td", "num", String(s.accepted)),
+            el("td", "num", `${s.calls}${s.failed ? ` (${s.failed} failed)` : ""}`),
+            el("td", "num", seconds(s.ms)),
+          );
+          row.addEventListener("click", () => {
+            open(run.id, true);
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          });
+          table.append(row);
+        }
+      }
+
+      $("play").addEventListener("click", () => (playing ? (stop(), draw()) : play()));
+      $("speed").addEventListener("click", () => {
+        speed = speed === 1 ? 2 : speed === 2 ? 4 : 1;
+        $("speed").textContent = speed + "×";
+      });
+      $("seek").addEventListener("input", (event) => {
+        stop();
+        cursor = Number(event.target.value);
+        draw();
+      });
+      const root = document.documentElement;
+      const setTheme = (theme) => {
+        root.dataset.theme = theme;
+        $("theme").textContent = theme === "dark" ? "Light" : "Dark";
+        try {
+          localStorage.setItem("theme", theme);
+        } catch {}
+      };
+      let saved = null;
+      try {
+        saved = localStorage.getItem("theme");
+      } catch {}
+      setTheme(saved || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+      $("theme").addEventListener("click", () => setTheme(root.dataset.theme === "dark" ? "light" : "dark"));
+
+      loadRuns();
+      setInterval(() => {
+        if (!staticMode && !playing) loadRuns();
+      }, 5000);
+    </script>
+  </body>
+</html>
