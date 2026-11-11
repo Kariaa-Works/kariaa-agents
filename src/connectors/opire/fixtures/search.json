@@ -1,0 +1,83 @@
+[
+  {
+    "id": "01KSXXX60RR76RSSXZXD0F4AGF",
+    "title": "c1work",
+    "url": "https://github.com/rodrigompy/bugb/issues/1",
+    "platform": "GitHub",
+    "featuredBy": null,
+    "claimerUsers": [],
+    "tryingUsers": [],
+    "programmingLanguages": [],
+    "createdAt": 1780194646040,
+    "pendingPrice": {
+      "value": 10000,
+      "unit": "USD_CENT"
+    },
+    "organization": {
+      "id": "01KSXXX5R3XKG9F7Z34JHFK2C5",
+      "url": "https://github.com/rodrigompy",
+      "name": "rodrigompy"
+    },
+    "project": {
+      "id": "01KSXXX5Z4SYTRXCNER02C5A2D",
+      "url": "https://github.com/rodrigompy/bugb",
+      "name": "bugb",
+      "isPublic": true,
+      "isBotInstalled": false
+    }
+  },
+  {
+    "id": "01J42C08V4J78ZAWH8JH2RQS8G",
+    "title": "research implementation for Windows",
+    "url": "https://github.com/radumarias/rencfs/issues/3",
+    "platform": "GitHub",
+    "featuredBy": null,
+    "claimerUsers": [],
+    "tryingUsers": [],
+    "programmingLanguages": ["Rust"],
+    "createdAt": 1722361586532,
+    "pendingPrice": {
+      "value": 4200,
+      "unit": "USD_CENT"
+    },
+    "organization": {
+      "id": "01J42C08AZ48K958VHT5PQQQTX",
+      "url": "https://github.com/radumarias",
+      "name": "radumarias"
+    },
+    "project": {
+      "id": "01J42C08CR747R4858H02ZCAYY",
+      "url": "https://github.com/radumarias/rencfs",
+      "name": "rencfs",
+      "isPublic": true,
+      "isBotInstalled": false
+    }
+  },
+  {
+    "id": "01HW8CK374Y67WDDZG22BYVZQ4",
+    "title": "500 Server Error - Auto Solve hcapcha",
+    "url": "https://github.com/flowese/UdioWrapper/issues/7",
+    "platform": "GitHub",
+    "featuredBy": null,
+    "claimerUsers": [],
+    "tryingUsers": [],
+    "programmingLanguages": ["Python"],
+    "createdAt": 1713973595364,
+    "pendingPrice": {
+      "value": 2000,
+      "unit": "USD_CENT"
+    },
+    "organization": {
+      "id": "01HVM71E2KD0FGTY5AWYFTKFWA",
+      "url": "https://github.com/flowese",
+      "name": "flowese"
+    },
+    "project": {
+      "id": "01HVM71ENVZ856EPT0PFYJ26MH",
+      "url": "https://github.com/flowese/UdioWrapper",
+      "name": "UdioWrapper",
+      "isPublic": true,
+      "isBotInstalled": true
+    }
+  }
+]
