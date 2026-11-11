@@ -1,0 +1,12 @@
+{
+  "name": "ledger",
+  "title": "Ledger",
+  "team": "Kariaa",
+  "description": "Reads a person's applications and earnings on every platform they have linked and writes one page: what needs them today, what is waiting on someone else, what was accepted, and each balance.",
+  "language": "typescript",
+  "interface": "library",
+  "run": "npx tsx workflows/ledger/run.ts",
+  "steps": ["track", "paid"],
+  "needs_key": true,
+  "env": ["KARIAA_API_KEY, or any other platform key in .env.example"]
+}
