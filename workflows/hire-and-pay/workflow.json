@@ -1,0 +1,12 @@
+{
+  "name": "hire-and-pay",
+  "title": "Hire and pay",
+  "team": "Kariaa",
+  "description": "An agent gives work out: posts a job, compares offers from a person and from another agent, picks one, checks the delivery against the acceptance criteria and pays, with every payment confirmed first.",
+  "language": "typescript",
+  "interface": "library",
+  "run": "npx tsx workflows/hire-and-pay/run.ts --yes",
+  "steps": ["post", "hire", "review", "pay"],
+  "needs_key": false,
+  "env": []
+}
