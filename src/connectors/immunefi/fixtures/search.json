@@ -1,0 +1,50 @@
+[
+  {
+    "project": "Ondo Finance",
+    "slug": "ondofinance",
+    "maxBounty": 1000000,
+    "rewardsToken": "USDC",
+    "description": "Ondo Finance brings exposure to US Treasuries on-chain, making it possible for token holders to earn yield daily with highly  liquid, bankruptcy-remote, tokenized assets. Ondo significantly broadens the investor base that can capitalize on ",
+    "launchDate": "2023-03-07T21:00:00.000Z",
+    "updatedDate": "2026-11-11T06:55:21.108Z",
+    "inviteOnly": false,
+    "kyc": true,
+    "isPaused": false,
+    "productType": ["Yield Aggregator"],
+    "ecosystem": ["ETH", "Solana"],
+    "language": ["Solidity", "Rust"],
+    "programType": ["Smart Contract"]
+  },
+  {
+    "project": "ENS",
+    "slug": "ens",
+    "maxBounty": 250000,
+    "rewardsToken": "USDC",
+    "description": "The Ethereum Name Service (ENS) is a distributed, open, and extensible naming system based on the Ethereum blockchain.",
+    "launchDate": "2024-05-10T03:11:00.000Z",
+    "updatedDate": "2026-11-11T06:43:41.189Z",
+    "inviteOnly": false,
+    "kyc": true,
+    "isPaused": false,
+    "productType": ["Services"],
+    "ecosystem": ["ETH"],
+    "language": ["Solidity", "NextJS"],
+    "programType": ["Websites and Applications", "Smart Contract"]
+  },
+  {
+    "project": "Maple",
+    "slug": "maple",
+    "maxBounty": 500000,
+    "rewardsToken": "USDC, SYRUP",
+    "description": "Founded in 2019, Maple was built on the belief that capital markets should be more transparent, efficient, and accessible \u2013 and that lending, the foundation of finance, could evolve beyond legacy infrastructure and closed systems.\n\nWe launc",
+    "launchDate": "2022-01-25T21:00:00.000Z",
+    "updatedDate": "2026-11-11T06:43:00.246Z",
+    "inviteOnly": false,
+    "kyc": true,
+    "isPaused": false,
+    "productType": ["Lending"],
+    "ecosystem": ["ETH"],
+    "language": ["JavaScript", "Solidity"],
+    "programType": ["Smart Contract"]
+  }
+]
