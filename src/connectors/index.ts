@@ -9,6 +9,7 @@ import { printify } from "./printify/index.js";
 import { remotive } from "./remotive/index.js";
 import { superteamEarn } from "./superteam-earn/index.js";
 import { whopBounties } from "./whop-bounties/index.js";
+import { immunefi } from "./immunefi/index.js";
 import { yeswehack } from "./yeswehack/index.js";
 
 /**
@@ -26,6 +27,7 @@ export const builtInConnectors: Connector[] = [
   whopBounties,
   kaggle,
   yeswehack,
+  immunefi,
   printify,
   remotive,
   dice,
@@ -42,6 +44,7 @@ export {
   whopBounties,
   kaggle,
   yeswehack,
+  immunefi,
   printify,
   remotive,
   dice,
