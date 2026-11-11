@@ -1,32 +1,37 @@
 # The Future of Work challenge
 
-**Build an agent that helps a person get work done, or connect a new place to find work. Submit it as a pull request.**
+**Build an agent that takes part in the economy, or connect a new place where agents can. Submit it as a pull request.**
 
-Work is spread across dozens of platforms: job boards, bounty programs, micro-task sites, competitions, marketplaces. Kariaa Agents puts them behind one API. Your project makes it more useful for the next person, and it stays in the repo after the event with your name on it.
+Agents can already earn money, sell things, and pay people or other agents to get work done. The platforms where that happens each have their own API; Kariaa Agents puts them behind one. Your project makes it more useful for the next person, and it stays in the repo after the event with your name on it.
 
 ## Pick a track
 
 ### Track 1: a workflow
 
-An agent built on the API that does something a real person looking for work would want. Some directions:
+An agent built on the API. Some directions:
 
-- **Scout.** Given what someone is good at, find the work worth their time across every platform and explain why.
-- **Bid writer.** Read a freelance task in full and draft a proposal that answers what the poster actually asked.
-- **Requirements coach.** Take someone's draft and a task, run `verify_work`, and turn each failed check into a fix.
-- **Tracker.** Follow a person's applications and earnings across platforms and say what needs them today.
-- **Matchmaker for a community.** Work for students at one school, for people in one city, for speakers of one language.
-- **An earner.** Take one path in [docs/earn.md](earn.md) (a bounty, a competition, a product to sell) as far as it goes with your own account, and record it.
-- **Your own idea.** If it finds work, does work, or gets someone paid, it fits.
+- **An earner.** Take one path in [docs/earn.md](earn.md) (a bounty, a competition, a data task) as far as it goes, and record it.
+- **A seller.** Make something and sell it through a platform that pays the seller.
+- **A buyer.** Write a clear brief, post it, compare the offers and pay for the work, with its person approving each payment. [docs/hire.md](hire.md)
+- **A scout or a bid writer.** Find the work worth someone's time across every platform, or draft the proposal that answers what the poster asked.
+- **A tracker.** Follow someone's applications, deliveries and earnings and say what needs them today.
+- **Your own idea.** If money or work moves through it, and a person stays in control, it fits.
 
-It lives in `workflows/<your-name>/`. Any language. [docs/workflows.md](workflows.md) is the guide, and four working examples are in [workflows/](../workflows).
-
-A workflow can also sit on the other side of the table: an agent that writes a clear brief, posts it, compares the offers and pays for the work, with its person approving each payment. [docs/hire.md](hire.md).
+It lives in `workflows/<your-name>/`. Any language. [docs/workflows.md](workflows.md) is the guide, and working examples are in [workflows/](../workflows).
 
 ### Track 2: an integration
 
-A platform that is not in [the catalog](catalog.md) yet: a job board, a bounty program, a gig site, a competition host. A board with a public JSON API takes about thirty lines; a platform with an MCP server takes no code. It lives in `src/connectors/<id>/`. Guide: [docs/connectors.md](connectors.md).
+A platform that is not in [the catalog](catalog.md) yet: somewhere an agent can earn, sell or pay. A bounty program, a marketplace, a competition host, a shop, a payments API. A platform with a public JSON API takes about thirty lines; one with an MCP server takes no code. It lives in `src/connectors/<id>/`. Guide: [docs/connectors.md](connectors.md).
 
-Good candidates have a public or documented API, list paid work, and are not already covered. The buying side of a marketplace (posting a job, reading offers, paying) counts double: no platform here has it yet. A new platform is searched when it is named (`work search design --connector <id>`); maintainers add it to the default catalog after a live run.
+Good candidates have a public or documented API, involve real money, and are not already covered. The paying side of a marketplace (posting a job, reading offers, paying) counts double: no platform here has it yet. A new platform is searched when it is named (`work search design --connector <id>`); maintainers add it to the default catalog after a live run.
+
+### Track 3: a verifier
+
+A check that says whether a piece of work is good enough before it is sent, so an agent does not waste a person's time or leak something it should not. It lives in `src/verifiers/<id>/`. Guide: [docs/verifiers.md](verifiers.md).
+
+### See one done
+
+The [open pull requests](https://github.com/Kariaa-Works/kariaa-agents/pulls) include two worked examples of each track, with the checklist filled in. Copy the shape.
 
 ## Set up
 
@@ -45,11 +50,13 @@ Without `npm link`, type `node dist/cli/index.js` in place of `work`.
 
 Finding, reading and verifying work need no key, so everyone can build and submit.
 
-Applying, submitting and getting paid act as a real person and need that person's Kariaa key. Kariaa accounts are for people 18 and older; if that is you, create a key at [kariaa.com/datahouse/connect](https://www.kariaa.com/datahouse/connect) and put it in `.env` as `KARIAA_API_KEY`.
+Acting (applying, handing work in, selling, paying) happens in a real person's name and needs a key: a Kariaa key, or your own key for any platform here. Kariaa accounts are for people 18 and older; if that is you, create a key at [kariaa.com/datahouse/connect](https://www.kariaa.com/datahouse/connect) and put it in `.env` as `KARIAA_API_KEY`. `work connect` lists the keys the other platforms take.
+
+No key? The paying side runs on a test marketplace with no account at all: `npx tsx workflows/hire-and-pay/run.ts`, once that example is merged, or `tests/helpers/fakeMarket.ts` today.
 
 ## Warm up
 
-Four small tasks on Kariaa are open to agents and checked the moment an answer is handed in. They are the quickest way to see the whole loop work with your own key: `work search --connector kariaa`, pick one tagged `agent-allowed`, and follow [docs/earn.md](earn.md). [workflows/challenge-solver](../workflows/challenge-solver) solves all four with a model; read it, then build something better.
+Four small tasks on Kariaa are open to agents and checked the moment an answer is handed in. They are the quickest way to see the whole loop work with your own key: `work search --connector kariaa`, pick one whose last line ends in `agent-allowed`, and follow [docs/earn.md](earn.md). [workflows/challenge-solver](../workflows/challenge-solver) solves all four with a model; read it, then build something better.
 
 ## Rules
 
@@ -64,7 +71,7 @@ Four small tasks on Kariaa are open to agents and checked the moment an answer i
 ## Submit
 
 1. Fork the repo and make a branch.
-2. Add one folder: `workflows/<your-name>/` or `src/connectors/<id>/`. A connector is also registered and listed in a few other files: [CONTRIBUTING.md](../.github/CONTRIBUTING.md) has the steps.
+2. Add one folder: `workflows/<your-name>/`, `src/connectors/<id>/` or `src/verifiers/<id>/`. A connector or a verifier is also registered and listed in a few other files: [CONTRIBUTING.md](../.github/CONTRIBUTING.md) has the steps.
 3. For a workflow, record a run and commit it:
    ```bash
    work trace --out workflows/<your-name>/trace.jsonl -- <your run command>
@@ -72,13 +79,13 @@ Four small tasks on Kariaa are open to agents and checked the moment an answer i
    ```
    Traces mask keys, emails, phone numbers, sign-in links and home-folder paths. Read yours once before committing.
 4. Run `npm test`, `npm run typecheck` and `npm run format`.
-5. Open a pull request titled `workflow: <name>` or `connector: <name>` and fill in the template. Add your event's name in the box provided.
+5. Open a pull request titled `workflow: <name>`, `connector: <name>` or `verifier: <name>` and fill in the template. Add your event's name in the box provided.
 
 ## What we look at
 
 - **It runs.** For a workflow, the committed trace shows it reaching live platforms. For an integration, the tests pass and one live search works.
-- **It is useful.** A person looking for work would want this.
-- **It goes far around the loop.** Find is good. Find, verify and act is better.
+- **It is useful.** Someone would want this running for them: to earn, to sell, or to get work done by paying for it.
+- **It goes far around the loop.** Finding is good. Finding, checking and acting is better. Money that actually moved, with a person approving it, is best.
 - **It is careful.** It follows the rules above without being told twice.
 - **Someone else can pick it up.** A short README that says what it does, how to run it and what you learned.
 
