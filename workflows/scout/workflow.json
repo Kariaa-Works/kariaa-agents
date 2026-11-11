@@ -1,0 +1,12 @@
+{
+  "name": "scout",
+  "title": "Scout",
+  "team": "Kariaa",
+  "description": "Finds work that fits a person's profile, reads the best matches in full, checks a draft against each one's requirements and writes a shortlist.",
+  "language": "typescript",
+  "interface": "library",
+  "run": "npx tsx workflows/scout/run.ts",
+  "steps": ["find", "verify", "apply", "track"],
+  "needs_key": false,
+  "env": ["KARIAA_API_KEY (optional: --apply and the applications list)"]
+}

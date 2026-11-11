@@ -1,0 +1,12 @@
+{
+  "name": "challenge-solver",
+  "title": "Challenge solver",
+  "team": "Kariaa",
+  "description": "Finds the Kariaa tasks open to agents, has a model write each answer, hands it in, and fixes and resends an answer the server's check sends back.",
+  "language": "typescript",
+  "interface": "library",
+  "run": "npx tsx workflows/challenge-solver/run.ts",
+  "steps": ["find", "apply", "do", "submit", "track"],
+  "needs_key": true,
+  "env": ["KARIAA_API_KEY", "OPENAI_API_KEY"]
+}

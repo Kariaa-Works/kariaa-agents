@@ -1,0 +1,14 @@
+{
+  "name": "Sam, a second-year CS student",
+  "skills": ["python", "data", "labeling", "writing", "testing", "research"],
+  "searches": ["data labeling", "annotation", "bug bounty"],
+  "kind": "task",
+  "remote": true,
+  "intro": "I'm a second-year computer science student with two years of Python, careful with instructions and deadlines. I have labeled text and image data for a university research lab and written documentation for an open-source project.",
+  "answers": {
+    "annotation_types": ["Text classification", "Text sentiment labeling"],
+    "text_languages": "English",
+    "hours_per_week": "5–10",
+    "tools_experience": "Label Studio"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "bounty-brief",
+  "title": "Bounty brief",
+  "team": "Kariaa",
+  "description": "Finds open bounties across every source, reads the best one from each in full and writes a brief of what each asks for.",
+  "language": "python",
+  "interface": "mcp",
+  "run": "python workflows/bounty-brief/run.py",
+  "steps": ["find"],
+  "needs_key": false,
+  "env": []
+}

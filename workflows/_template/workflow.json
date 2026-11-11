@@ -1,0 +1,12 @@
+{
+  "name": "example-workflow",
+  "title": "Example workflow",
+  "team": "TODO your team or name",
+  "description": "TODO one sentence: what it finds, what it does with it.",
+  "language": "typescript",
+  "interface": "library",
+  "run": "npx tsx workflows/example-workflow/run.ts",
+  "steps": ["find"],
+  "needs_key": false,
+  "env": []
+}

@@ -1,0 +1,12 @@
+{
+  "name": "openai-agent",
+  "title": "OpenAI agent",
+  "team": "Kariaa",
+  "description": "An OpenAI model reads a goal in plain words and decides which Work API tools to call, on a guarded loop: a tool allowlist, a cap on writes, no local files, no payments.",
+  "language": "typescript",
+  "interface": "mcp",
+  "run": "npx tsx workflows/openai-agent/run.ts \"<goal>\"",
+  "steps": ["find", "verify", "apply", "do", "submit"],
+  "needs_key": true,
+  "env": ["OPENAI_API_KEY", "OPENAI_MODEL (optional)", "KARIAA_API_KEY (only with --act)"]
+}
