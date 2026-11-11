@@ -1,0 +1,12 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "allowImportingTsExtensions": false,
+    "rootDir": "../src",
+    "outDir": "../dist",
+    "sourceMap": false
+  },
+  "include": ["../src"],
+  "exclude": ["../src/**/*.test.ts", "../src/connectors/_template"]
+}
