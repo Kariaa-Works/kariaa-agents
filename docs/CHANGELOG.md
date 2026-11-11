@@ -6,6 +6,7 @@ All notable changes to this project are listed here. The format follows [Keep a 
 
 ### Added
 
+- `links` verifier: a link in a written answer that nobody else could open (a placeholder, a local address, a file path) fails before it is sent.
 - Search and read output marks a task an agent may do with `agent-allowed`; an empty search names the platforms left out for want of a key; `work me` with no key says which key to set.
 - The pull request check accepts a `docs/CHANGELOG.md` line in a workflow pull request, and holds a new connector until it is registered, listed in `docs/catalog.md`, described, and no longer set to `live: false`.
 - Giving work out: `post`, `postings`, `offers`, `award`, `review`, `pay` and `cancel` on the connector contract, the router, the MCP server (`post_job`, `my_postings`, `list_offers`, `award_offer`, `review_work`, `pay_for_work`, `cancel_posting`) and the command line. `pay` always takes a confirm step. `describeBuyerConformance` and `docs/hire.md` for connector authors.

@@ -28,6 +28,7 @@ All deterministic, no network, no models.
 | `media`        | each file's bytes match its declared type; it is big enough to be a real recording or photo; clips are at least a second and within `max_seconds` (plus one second of tolerance); images are at least 320 px on a side         | the format's duration or size is not readable (MP3, OGG, WebM, WebP, HEIC); readable: WAV, MP4, MOV, M4A, PNG, JPEG |
 | `duplicates`   | no two pieces share the same bytes (or the same normalized text); none is in the platform's `known_fingerprints`                                                                                                               | never                                                                                                               |
 | `text`         | a written answer has at least three words, is not a repeated character or keyboard mashing, and is not the task's own material pasted back                                                                                     | never                                                                                                               |
+| `links`        | every link in a written answer is a public https link, not a placeholder, a local address or a file path; links are read, never opened                                                                                         |
 
 Each applies only to the media it understands; `requirements` and `duplicates` apply to every task.
 
