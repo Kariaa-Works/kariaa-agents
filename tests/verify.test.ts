@@ -44,7 +44,7 @@ describe("verifyWork", () => {
     });
     expect(result.outcome).toBe("pass");
     expect(result.deterministic).toBe(true);
-    expect(result.verdicts.map((v) => v.verifier)).toEqual(["requirements", "media", "duplicates"]);
+    expect(result.verdicts.map((v) => v.verifier)).toEqual(["requirements", "media", "duplicates", "secrets"]);
     expect(result.accepted_units).toBe(2);
     expect(result.pay).toEqual({ amount: 1, currency: "USD" });
     expect(result.summary).toContain("Pass");
@@ -166,7 +166,7 @@ describe("verifyWork", () => {
   it("judges written answers", async () => {
     const good = await run({ job: TEXT_TASK, work: [textWork("Positive: the customer says they will come back, which is praise.")] });
     expect(good.outcome).toBe("pass");
-    expect(good.verdicts.map((v) => v.verifier)).toEqual(["requirements", "duplicates", "text"]);
+    expect(good.verdicts.map((v) => v.verifier)).toEqual(["requirements", "duplicates", "text", "secrets"]);
     expect(good.pay).toEqual({ amount: 2, currency: "USD" });
     expect((await run({ job: TEXT_TASK, work: [textWork("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")] })).summary).toContain(
       "does not read like an answer",
