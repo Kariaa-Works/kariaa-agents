@@ -1,0 +1,35 @@
+{
+  "id": "user_xxxxxxxxxxxxxx",
+  "username": "danawhitfield",
+  "name": "Dana Whitfield",
+  "balance": {
+    "businesses": [],
+    "businesses_total_usd": "0.00",
+    "cash": [
+      {
+        "currency": "usd",
+        "balance": 250,
+        "balance_usd": 250,
+        "pending_balance_usd": 10,
+        "in_transit_balance_usd": 0,
+        "price_usd": 1,
+        "reserve_balance_usd": 0,
+        "total_withdrawable_balance": 250
+      }
+    ],
+    "cash_usd": "260.00",
+    "crypto": [],
+    "crypto_usd": "0.00",
+    "pending_usd": "10.00",
+    "total_usd": "260.00",
+    "treasury_pending_usd": "0.00"
+  },
+  "earnings_usd": {
+    "total": { "lifetime": "750.00", "last_30_days": "250.00", "last_7_days": "100.00", "last_24_hours": "25.00" },
+    "personal": { "lifetime": "750.00", "last_30_days": "250.00", "last_7_days": "100.00", "last_24_hours": "25.00" },
+    "owned_accounts": { "lifetime": "0.00", "last_30_days": "0.00", "last_7_days": "0.00", "last_24_hours": "0.00" },
+    "partners": { "lifetime": "0.00", "last_30_days": "0.00", "last_7_days": "0.00", "last_24_hours": "0.00" },
+    "first_earned_at": "2026-06-02T15:30:00Z"
+  },
+  "created_at": "2026-06-01T12:00:00Z"
+}

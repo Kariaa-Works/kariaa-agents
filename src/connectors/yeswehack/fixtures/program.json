@@ -1,0 +1,91 @@
+{
+  "title": "Superbank - Public Bug Bounty Program",
+  "slug": "superbank-public-bug-bounty-program",
+  "rules": "## Superbank\n\nSuperbank is a prominent digital banking platform in Indonesia, known for providing innovative, customer-centric banking services powered by advanced technology. It aims to redefine banking experiences by offering seamless, easy-to-use services through mobile and online platforms. For now, Superbank as a digital banking in indonesia is created a bug bounty program with the scope and a program rules below.\n\n## Scopes description\n\n#### Android & iOS\n\nThis app is critical to our business as it's where the user use our mobile banking application.The app allows users to perform a wide range of banking activities directly from their mobile devices, making it a convenient tool for…",
+  "type": "bug-bounty",
+  "status": "V",
+  "public": true,
+  "bounty": true,
+  "gift": false,
+  "vdp": false,
+  "disabled": false,
+  "archived": false,
+  "reports_count": 132,
+  "bounty_reward_min": 0,
+  "bounty_reward_max": 2000,
+  "scopes_count": 6,
+  "business_unit": {
+    "name": "Superbank",
+    "slug": "superbank",
+    "description": "Superbank is digital bank from Indonesia.",
+    "currency": "USD",
+    "already_activate_product": true
+  },
+  "scopes": [
+    {
+      "scope": "https://apps.apple.com/id/app/superbank/id6444720285",
+      "scope_type": "mobile-application-ios",
+      "scope_type_name": "Mobile application IOS",
+      "asset_value": "HIGH",
+      "report_count": null
+    },
+    {
+      "scope": "https://play.google.com/store/apps/details?id=id.co.bankfama.android&hl=en",
+      "scope_type": "mobile-application-android",
+      "scope_type_name": "Mobile application Android",
+      "asset_value": "HIGH",
+      "report_count": null
+    },
+    {
+      "scope": "api.super-id.net",
+      "scope_type": "api",
+      "scope_type_name": "API",
+      "asset_value": "HIGH",
+      "report_count": null
+    }
+  ],
+  "out_of_scope": ["Applications, URLs, or data that are not listed on this page are considered out of scope."],
+  "qualifying_vulnerability": ["SQL Injection (SQLi)", "Cross-Site Scripting (XSS)", "Remote Code Execution (RCE)"],
+  "non_qualifying_vulnerability": ["Broken Link/Social media Hijacking", "Tabnabbing", "Missing cookie flags"],
+  "reward_grid_default": {
+    "bounty_low": null,
+    "bounty_medium": null,
+    "bounty_high": null,
+    "bounty_critical": null
+  },
+  "reward_grid_very_low": {
+    "bounty_low": null,
+    "bounty_medium": null,
+    "bounty_high": null,
+    "bounty_critical": null
+  },
+  "reward_grid_low": {
+    "bounty_low": null,
+    "bounty_medium": null,
+    "bounty_high": null,
+    "bounty_critical": null
+  },
+  "reward_grid_medium": {
+    "bounty_low": 100,
+    "bounty_medium": 300,
+    "bounty_high": 800,
+    "bounty_critical": 1000
+  },
+  "reward_grid_high": {
+    "bounty_low": 150,
+    "bounty_medium": 400,
+    "bounty_high": 1000,
+    "bounty_critical": 2000
+  },
+  "reward_grid_critical": {
+    "bounty_low": null,
+    "bounty_medium": null,
+    "bounty_high": null,
+    "bounty_critical": null
+  },
+  "account_access": "## Self-register\n\n### Superbank Scope\n- You can self-register from [Android](https://play.google.com/store/apps/details?id=id.co.bankfama.android&hl=en) OR [iOS](https://apps.apple.com/id/app/superbank/id6444720285) . \n- Please use your YesWeHack email aliases which are [available…",
+  "user_agent": null,
+  "report_submission_cost": 3,
+  "supported_languages": ["GB"],
+  "last_update_at": "2026-09-14T09:51:27+02:00"
+}

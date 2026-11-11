@@ -1,0 +1,167 @@
+{
+  "kind": "structured",
+  "value": {
+    "data": [
+      {
+        "id": "1f63f4a9d29db6f70012016b39b2c775",
+        "guid": "030b1c85-e411-417f-aee6-0d3eaaebd9fd",
+        "title": "Production Line Electrician 1",
+        "summary": "Ingersoll Rand is an equal opportunity employer. All qualified applicants will receive consideration for employment without regard to age, ancestry, color, family or medical care leave, gender identity or expression, genetic information, marital status, medical condition, national origin, physical or mental disability, political affiliation, protected veteran status, race, religion, sex (including…",
+        "postedDate": "2026-10-10T02:03:26Z",
+        "modifiedDate": "2026-10-19T23:19:42Z",
+        "jobLocation": {
+          "displayName": "Junction City, Oregon, USA"
+        },
+        "detailsPageUrl": "https://www.dice.com/direct-apply/030b1c85-e411-417f-aee6-0d3eaaebd9fd?utm_source=work-protocol-0.1 capture&utm_medium=mcp",
+        "salary": null,
+        "clientBrandId": "pandfeed",
+        "companyPageUrl": "https://www.dice.com/company/pandfeed",
+        "companyLogoUrl": "https://prod-file-upload-store.s3.amazonaws.com/Monograms/I.png",
+        "companyName": "Ingersoll Rand",
+        "employmentType": "Full-time",
+        "isHighlighted": null,
+        "score": 12572.467,
+        "easyApply": false,
+        "employerType": "Recruiter",
+        "workFromHomeAvailability": "FALSE",
+        "workplaceTypes": ["On-Site"],
+        "isRemote": false,
+        "willingToSponsor": false
+      },
+      {
+        "id": "8376e7e602641332490ff74e444ebf5b",
+        "guid": "3cb17251-c1db-442a-8c59-628bc79be07d",
+        "title": "Maintenance Specialist/ Electrician",
+        "summary": "Join Vylor-Powering the Future of Agriculture  At Vylor, we're advancing agriculture through breakthrough science-combining elite germplasm, cutting-edge biotech, and next-generation expertise in gene editing and molecular breeding. Our portfolio includes trusted industry brands like Pioneer , Brevant , and Hoegemeyer , delivering performance farmers rely on.  Join us to help scale innovation glob…",
+        "postedDate": "2026-10-09T22:15:59Z",
+        "modifiedDate": "2026-10-10T00:10:47Z",
+        "jobLocation": {
+          "displayName": "Waimea, Hawaii, USA"
+        },
+        "detailsPageUrl": "https://www.dice.com/direct-apply/3cb17251-c1db-442a-8c59-628bc79be07d?utm_source=work-protocol-0.1 capture&utm_medium=mcp",
+        "salary": "USD 77,000.00 - 96,000.00 per year",
+        "clientBrandId": "jovfeed",
+        "companyPageUrl": "https://www.dice.com/company/jovfeed",
+        "companyLogoUrl": "https://prod-file-upload-store.s3.amazonaws.com/Monograms/V.png",
+        "companyName": "Vylor",
+        "employmentType": "Full-time",
+        "isHighlighted": null,
+        "score": 11907.174,
+        "easyApply": false,
+        "employerType": "Recruiter",
+        "workFromHomeAvailability": "FALSE",
+        "workplaceTypes": ["On-Site"],
+        "isRemote": false,
+        "willingToSponsor": false
+      },
+      {
+        "id": "826a5676facef84c3af2a2c3aa0a979d",
+        "guid": "76f48534-afc2-4ed3-8585-8ff201651c43",
+        "title": "Plant Electrician",
+        "summary": "Join Vylor-Powering the Future of Agriculture  At Vylor, we're advancing agriculture through breakthrough science-combining elite germplasm, cutting-edge biotech, and next-generation expertise in gene editing and molecular breeding. Our portfolio includes trusted industry brands like Pioneer , Brevant , and Hoegemeyer , delivering performance farmers rely on.  Join us to help scale innovation glob…",
+        "postedDate": "2026-10-09T22:16:00Z",
+        "modifiedDate": "2026-10-10T00:12:06Z",
+        "jobLocation": {
+          "displayName": "Toledo, Iowa, USA"
+        },
+        "detailsPageUrl": "https://www.dice.com/direct-apply/76f48534-afc2-4ed3-8585-8ff201651c43?utm_source=work-protocol-0.1 capture&utm_medium=mcp",
+        "salary": null,
+        "clientBrandId": "jovfeed",
+        "companyPageUrl": "https://www.dice.com/company/jovfeed",
+        "companyLogoUrl": "https://prod-file-upload-store.s3.amazonaws.com/Monograms/V.png",
+        "companyName": "Vylor",
+        "employmentType": "Full-time",
+        "isHighlighted": null,
+        "score": 11727.0625,
+        "easyApply": false,
+        "employerType": "Recruiter",
+        "workFromHomeAvailability": "FALSE",
+        "workplaceTypes": ["On-Site"],
+        "isRemote": false,
+        "willingToSponsor": false
+      }
+    ],
+    "metadata": {
+      "page": 1,
+      "pageSize": 5,
+      "total": 568,
+      "totalPages": 114,
+      "facetQueryResults": [
+        {
+          "displayName": "Employment Type",
+          "facetName": "employmentType",
+          "facetResults": [
+            {
+              "count": 549,
+              "displayValue": "Full-time",
+              "value": "FULLTIME"
+            },
+            {
+              "count": 19,
+              "displayValue": "Contract",
+              "value": "CONTRACTS"
+            },
+            {
+              "count": 2,
+              "displayValue": "Third Party",
+              "value": "THIRD_PARTY"
+            }
+          ]
+        },
+        {
+          "displayName": "Posted Date",
+          "facetName": "postedDate",
+          "facetResults": [
+            {
+              "count": 15,
+              "displayValue": "Today",
+              "value": "ONE"
+            },
+            {
+              "count": 34,
+              "displayValue": "Last 3 Days",
+              "value": "THREE"
+            },
+            {
+              "count": 71,
+              "displayValue": "Last 7 Days",
+              "value": "SEVEN"
+            }
+          ]
+        },
+        {
+          "displayName": "Employer Type",
+          "facetName": "employerType",
+          "facetResults": [
+            {
+              "count": 331,
+              "displayValue": "Recruiter",
+              "value": "Recruiter"
+            },
+            {
+              "count": 191,
+              "displayValue": "Direct Hire",
+              "value": "Direct Hire"
+            },
+            {
+              "count": 46,
+              "displayValue": "Other",
+              "value": "Other"
+            }
+          ]
+        }
+      ],
+      "includeRemote": true,
+      "recommendedSearches": {},
+      "searchId": "7849a4c7-2702-40df-afa8-b0151387e063",
+      "searchedLocation": {
+        "countryCode2": "US",
+        "radius": 30,
+        "radiusUnit": "mi"
+      },
+      "selectedFilters": null,
+      "sortBy": "relevance",
+      "totalJobCount": 123452
+    }
+  }
+}

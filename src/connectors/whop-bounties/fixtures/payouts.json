@@ -1,0 +1,32 @@
+{
+  "data": [
+    {
+      "id": "wdrl_xxxxxxxxxxxxx",
+      "amount": "125.5",
+      "cancelable": false,
+      "created_at": "2026-06-01T12:00:00Z",
+      "currency": "usd",
+      "estimated_arrival": "2026-06-03T12:00:00Z",
+      "failure": null,
+      "fee_amount": "1.25",
+      "fee_paid_by": "self",
+      "markup_fee": "0.0",
+      "net_amount": "124.25",
+      "notes": "March bounty rewards",
+      "object": "payout",
+      "payout_method": {
+        "nickname": "Operating account",
+        "supported_payout_method": {
+          "delivery_type": "bank_deposit",
+          "icon_url": "https://cdn.whop.com/payouts/ach.png",
+          "payer_name": "ACH Bank Deposit"
+        }
+      },
+      "source": "api",
+      "speed": "standard",
+      "status": "completed",
+      "status_detail": "completed"
+    }
+  ],
+  "page_info": { "end_cursor": null, "start_cursor": "WyJjdXJzb3IiLDFd", "has_next_page": false, "has_previous_page": false }
+}

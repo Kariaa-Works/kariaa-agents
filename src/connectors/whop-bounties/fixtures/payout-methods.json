@@ -1,0 +1,26 @@
+{
+  "data": [
+    {
+      "id": "pyot_xxxxxxxxxxxx01",
+      "nickname": "Business checking",
+      "institution_name": "Example Bank",
+      "is_default": true,
+      "status": "active",
+      "supported_payout_method": {
+        "name": "ACH Bank Deposit",
+        "delivery_type": "bank_deposit",
+        "supports_standard_delivery": true,
+        "supports_instant_delivery": false
+      }
+    },
+    {
+      "id": "pyot_xxxxxxxxxxxx02",
+      "nickname": null,
+      "institution_name": null,
+      "is_default": false,
+      "status": "created",
+      "supported_payout_method": { "name": "PayPal", "supports_standard_delivery": true, "supports_instant_delivery": false }
+    }
+  ],
+  "page_info": { "end_cursor": null, "start_cursor": "WyJjdXJzb3IiLDFd", "has_next_page": false, "has_previous_page": false }
+}

@@ -1,0 +1,21 @@
+{
+  "url": "https://api.github.com/repos/tscircuit/pcb-viewer/pulls/169",
+  "html_url": "https://github.com/tscircuit/pcb-viewer/pull/169",
+  "id": 2338114643,
+  "number": 169,
+  "state": "closed",
+  "title": "Remove disableAutoFocus in favor of focusOnHover={false}",
+  "created_at": "2025-02-16T08:34:23Z",
+  "merged_at": null,
+  "draft": false,
+  "merged": false,
+  "user": {
+    "login": "zalabhavy"
+  },
+  "body": "Fixed #163 \r\n/claim #163 \r\n\r\n",
+  "base": {
+    "repo": {
+      "full_name": "tscircuit/pcb-viewer"
+    }
+  }
+}

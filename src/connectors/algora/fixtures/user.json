@@ -1,0 +1,9 @@
+{
+  "_fixture": "Hand-made from the GitHub REST reference example for GET /user (https://docs.github.com/en/rest/users/users#get-the-authenticated-user): it needs a token, so it was not captured live.",
+  "login": "octocat",
+  "id": 1,
+  "type": "User",
+  "name": "monalisa octocat",
+  "html_url": "https://github.com/octocat",
+  "public_repos": 2
+}

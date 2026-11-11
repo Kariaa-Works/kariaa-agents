@@ -1,0 +1,33 @@
+{
+  "url": "https://api.github.com/repos/tscircuit/template-api-fake/issues/2",
+  "repository_url": "https://api.github.com/repos/tscircuit/template-api-fake",
+  "html_url": "https://github.com/tscircuit/template-api-fake/issues/2",
+  "id": 3055155077,
+  "number": 2,
+  "title": "Switch to `ky` from `redaxios`",
+  "state": "open",
+  "comments": 40,
+  "created_at": "2025-05-11T18:56:52Z",
+  "updated_at": "2026-10-01T18:37:36Z",
+  "closed_at": null,
+  "user": {
+    "login": "seveibar",
+    "type": "User"
+  },
+  "labels": [
+    {
+      "name": "💎 Bounty",
+      "color": "ededed"
+    },
+    {
+      "name": "$12",
+      "color": "34d399"
+    },
+    {
+      "name": "💰 Rewarded",
+      "color": "ededed"
+    }
+  ],
+  "assignees": [],
+  "body": "/bounty $12"
+}

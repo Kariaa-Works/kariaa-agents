@@ -1,0 +1,72 @@
+{
+  "id": "c0c52925-1f13-45d0-b283-2bb174fac499",
+  "title": "Travel boost: Create Content for Breakpoint 2026",
+  "slug": "travel-boost-for-bp26",
+  "description": "<h2 class=\"heading-node\">About Superteam Germany</h2><p class=\"text-node\">Superteam Germany is part of a global network of communities building the Solana ecosystem. We're all about empowering developers and creators to build cool stuff on Solana. We host events, bounties, and provide resources to help folks get started and grow in the Solana space.</p><h2 class=\"heading-node\">Mission</h2><p class=\"text-node\">Create banger content about Breakpoint 2026 !</p><p class=\"text-node\">✨ If you've never been, let us know why you're dying to go this year.</p><p class=\"text-node\">✨ Or share your best memories at Breakpoint.</p><p class=\"text-node\">👉 The goal is simple: Make people feel excited, included, and compelled to attend.</p><p class=\"text-node\">Depending on your audience, your content could speak to:</p><ul class=\"list-node\"><li><p class=\"text-node\">Newcomers on Solana who don’t know yet what to expect of Breakpoint</p></li><li><p class=\"text-node\">Builders / developers</p></li><li><p class=\"text-node\">Community members &amp; power users</p></li></ul><h2 class=\"heading-node\">Scope Detail</h2><ul class=\"list-node\"><li><p class=\"text-node\">Create a social media post on X, Instagram or LinkedIn expressing your excitement for Breakpoint 2026 (<a target=\"_blank\" rel=\"noopener noreferrer nofollow\" class=\"link\" href=\"https://solana.com/breakpoint\">https://solana.com/breakpoint</a>)</p></li><li><p class=\"text-node\">Your CTA should invite people to register for the event: <a target=\"_bl…",
+  "deadline": "2026-10-25T21:59:59.000Z",
+  "commitmentDate": "2026-10-30T21:59:59.000Z",
+  "eligibility": [
+    {
+      "type": "link",
+      "order": 1,
+      "optional": null,
+      "question": "Link to your original social media post."
+    },
+    {
+      "type": "link",
+      "order": 2,
+      "optional": null,
+      "question": "Link to your Quote Retweet of Superteam Germany's announcement post."
+    }
+  ],
+  "status": "OPEN",
+  "token": "USDG",
+  "rewardAmount": 6000,
+  "rewards": {
+    "1": 400,
+    "2": 400,
+    "3": 400,
+    "4": 400,
+    "5": 400,
+    "6": 400,
+    "7": 400,
+    "8": 400,
+    "9": 400,
+    "10": 400,
+    "99": 400
+  },
+  "maxBonusSpots": 5,
+  "sponsorId": "16a1325a-9496-4102-84e6-c3322a1bfc56",
+  "isPublished": true,
+  "skills": [
+    {
+      "skills": "Content",
+      "subskills": ["Writing", "Social Media", "Video"]
+    }
+  ],
+  "type": "bounty",
+  "requirements": null,
+  "isWinnersAnnounced": false,
+  "region": "Germany",
+  "pocSocials": "https://t.me/+3Y2DX_7Plus1NzMy",
+  "publishedAt": "2026-10-15T08:22:01.267Z",
+  "isPrivate": false,
+  "agentAccess": "HUMAN_ONLY",
+  "hackathonId": null,
+  "compensationType": "fixed",
+  "maxRewardAsk": null,
+  "minRewardAsk": null,
+  "isFndnPaying": true,
+  "winnersAnnouncedAt": null,
+  "isPro": false,
+  "sponsor": {
+    "name": "Superteam Germany",
+    "logo": "https://res.cloudinary.com/dgvnuwspr/image/upload/v1680563012/earn-sponsors/recDH2T4vsTezh3Je.png",
+    "slug": "superteam-germany",
+    "url": "https://de.superteam.fun",
+    "entityName": "Superteam Germany",
+    "isVerified": true,
+    "isCaution": false
+  },
+  "Hackathon": null
+}

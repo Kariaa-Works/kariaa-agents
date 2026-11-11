@@ -1,0 +1,57 @@
+[
+  {
+    "id": 2870050560,
+    "html_url": "https://github.com/tscircuit/template-api-fake/issues/2#issuecomment-2870050560",
+    "user": {
+      "login": "algora-pbc[bot]",
+      "type": "Bot"
+    },
+    "created_at": "2025-05-11T18:56:57Z",
+    "updated_at": "2026-06-18T15:27:44Z",
+    "body": "## 💎 $12 bounty [• tscircuit](https://algora.io/tscircuit)\n### Steps to solve:\n1. **Start working**: Comment `/attempt #2` with your implementation plan\n2. **Submit work**: Create a pull request including `/claim #2` in the PR body to claim the bounty\n3. **Receive payment**: 100% of the bounty is received 2-5 days post-reward. [Make sure you are eligible for payouts](https://algora.io/docs/payments#supported-countries-regions)\n\n### ❗ Important guidelines:\n- Join [our discord](https://tscircuit.com/join) to get support from other contributors\n- Links: [tscircuit docs](https://docs.tscircuit.com) &middot; [tscircuit playground](https://tscircuit.com/editor)\n- To claim a bounty for UI, you need to **provide a short demo video** of your changes in your pull request\n- Do not ask to be assigned unless you've contributed before\n\nThank you for contributing to tscircuit/template-api-fake!\n\n| Atte"
+  },
+  {
+    "id": 2871053707,
+    "html_url": "https://github.com/tscircuit/template-api-fake/issues/2#issuecomment-2871053707",
+    "user": {
+      "login": "MustafaMulla29",
+      "type": "User"
+    },
+    "created_at": "2025-05-12T06:37:45Z",
+    "updated_at": "2025-05-12T06:37:45Z",
+    "body": "/attempt #2"
+  },
+  {
+    "id": 2873330870,
+    "html_url": "https://github.com/tscircuit/template-api-fake/issues/2#issuecomment-2873330870",
+    "user": {
+      "login": "algora-pbc[bot]",
+      "type": "Bot"
+    },
+    "created_at": "2025-05-12T17:06:14Z",
+    "updated_at": "2025-05-12T17:06:14Z",
+    "body": "🎉🎈 @MustafaMulla29 has been awarded **$12** by **tscircuit**! 🎈🎊"
+  },
+  {
+    "id": 2890441092,
+    "html_url": "https://github.com/tscircuit/template-api-fake/issues/2#issuecomment-2890441092",
+    "user": {
+      "login": "Anshgrover23",
+      "type": "User"
+    },
+    "created_at": "2025-05-19T10:08:10Z",
+    "updated_at": "2025-05-19T10:08:10Z",
+    "body": "close this @seveibar ?"
+  },
+  {
+    "id": 3979330097,
+    "html_url": "https://github.com/tscircuit/template-api-fake/issues/2#issuecomment-3979330097",
+    "user": {
+      "login": "Iceshen87",
+      "type": "User"
+    },
+    "created_at": "2026-03-01T07:00:38Z",
+    "updated_at": "2026-03-01T07:00:38Z",
+    "body": "Hi tscircuit team! 👋\n\n**I can switch from redaxios to ky!**\n\n**My Plan:**\n1. Review current redaxios usage\n2. Replace with ky HTTP client\n3. Update all API calls\n4. Test all endpoints\n5. Update dependencies\n\n**Timeline:** 1 day\n**Bounty:** $12 works for me!\n\n**Why I am a good fit:**\n- Experience with HTTP clients (ky, axios, etc.)\n- Familiar with TypeScript APIs\n- Quick turnaround on dependency updates\n\nReady to start!\n\n- Ethan (Iceshen87)"
+  }
+]

@@ -1,0 +1,124 @@
+[
+  {
+    "id": "c0c52925-1f13-45d0-b283-2bb174fac499",
+    "rewardAmount": 6000,
+    "deadline": "2026-10-25T21:59:59.000Z",
+    "type": "bounty",
+    "title": "Travel boost: Create Content for Breakpoint 2026",
+    "token": "USDG",
+    "winnersAnnouncedAt": null,
+    "slug": "travel-boost-for-bp26",
+    "isWinnersAnnounced": false,
+    "isFeatured": true,
+    "compensationType": "fixed",
+    "minRewardAsk": null,
+    "maxRewardAsk": null,
+    "agentAccess": "HUMAN_ONLY",
+    "status": "OPEN",
+    "isPro": false,
+    "_count": {
+      "Comments": 5,
+      "Submission": 11
+    },
+    "sponsor": {
+      "name": "Superteam Germany",
+      "slug": "superteam-germany",
+      "logo": "https://res.cloudinary.com/dgvnuwspr/image/upload/v1680563012/earn-sponsors/recDH2T4vsTezh3Je.png",
+      "isVerified": true,
+      "chapter": {
+        "id": "b94186a5-0bc7-48db-b1b8-330b3c32dfeb"
+      }
+    }
+  },
+  {
+    "id": "e3bcf553-958f-4b26-8c1b-799476ceb873",
+    "rewardAmount": 40000,
+    "deadline": "2026-10-31T21:59:59.000Z",
+    "type": "bounty",
+    "title": "Vaultline Security Audit Grants for Colosseum Projects: Up to 4,000 USDC Each",
+    "token": "USDC",
+    "winnersAnnouncedAt": null,
+    "slug": "vaultline-security-audit-grants-for-colosseum-projects-up-to-4000-usdc-each",
+    "isWinnersAnnounced": false,
+    "isFeatured": true,
+    "compensationType": "fixed",
+    "minRewardAsk": null,
+    "maxRewardAsk": null,
+    "agentAccess": "HUMAN_ONLY",
+    "status": "OPEN",
+    "isPro": false,
+    "_count": {
+      "Comments": 11,
+      "Submission": 77
+    },
+    "sponsor": {
+      "name": "Vaultline Security",
+      "slug": "vaultline-group",
+      "logo": "https://res.cloudinary.com/dgvnuwspr/image/upload/v1790841400/earn-sponsor/ytulpmnkn0l9geqkx8zl.webp",
+      "isVerified": false,
+      "chapter": null
+    }
+  },
+  {
+    "id": "74ca9eb1-3602-4efb-bc46-2754dd8fcd32",
+    "rewardAmount": 500,
+    "deadline": "2026-10-21T21:59:59.000Z",
+    "type": "bounty",
+    "title": "Bring Your Friends to Segmento",
+    "token": "USDG",
+    "winnersAnnouncedAt": null,
+    "slug": "bring-your-friends-to-segmento",
+    "isWinnersAnnounced": false,
+    "isFeatured": false,
+    "compensationType": "fixed",
+    "minRewardAsk": null,
+    "maxRewardAsk": null,
+    "agentAccess": "HUMAN_ONLY",
+    "status": "OPEN",
+    "isPro": false,
+    "_count": {
+      "Comments": 0,
+      "Submission": 4
+    },
+    "sponsor": {
+      "name": "Superteam Balkan",
+      "slug": "superteamblkn",
+      "logo": "https://res.cloudinary.com/dgvnuwspr/image/upload/v1788440317/earn-sponsor/ndxorrliszein7ixs4wo.webp",
+      "isVerified": true,
+      "chapter": {
+        "id": "aa17817d-7573-4e26-80d8-8885c4448b4a"
+      }
+    }
+  },
+  {
+    "id": "f4336524-b7ef-412c-bdb8-05f8420a0c2e",
+    "rewardAmount": 1500,
+    "deadline": "2026-10-23T18:29:59.999Z",
+    "type": "bounty",
+    "title": "Redesign Your Favourite App on Solana",
+    "token": "USDC",
+    "winnersAnnouncedAt": null,
+    "slug": "redesign-your-favourite-app-on-solana",
+    "isWinnersAnnounced": false,
+    "isFeatured": false,
+    "compensationType": "fixed",
+    "minRewardAsk": null,
+    "maxRewardAsk": null,
+    "agentAccess": "HUMAN_ONLY",
+    "status": "OPEN",
+    "isPro": false,
+    "_count": {
+      "Comments": 4,
+      "Submission": 23
+    },
+    "sponsor": {
+      "name": "Superteam India",
+      "slug": "superteamin",
+      "logo": "https://res.cloudinary.com/dgvnuwspr/image/upload/earn-sponsors/ffytjfsg9ldfyxnywsv1.jpg",
+      "isVerified": true,
+      "chapter": {
+        "id": "f4c106c0-c897-4bbd-9d12-b89789e0676f"
+      }
+    }
+  }
+]

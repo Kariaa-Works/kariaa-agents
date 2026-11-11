@@ -1,0 +1,41 @@
+{
+  "id": "btys_xxxxxxxxxxxxxx",
+  "bounty_id": "bnty_xxxxxxxxxxxx01",
+  "capture_clips": null,
+  "capture_filename": null,
+  "captured_clip_count": 0,
+  "captured_duration_seconds": 0,
+  "city": null,
+  "claimed_at": "2026-09-10T09:00:00.000Z",
+  "content": "Best moment of the stream, 42 seconds.",
+  "country": null,
+  "created_at": "2026-09-10T09:00:00.000Z",
+  "deliverable_type": "content_url",
+  "deliverable_urls": ["https://www.tiktok.com/@shinetime/video/7412345678901234567"],
+  "denial_reason": null,
+  "device": null,
+  "files": [
+    {
+      "id": "file_xxxxxxxxxxxxxx",
+      "attachment_type": "image",
+      "content_type": "image/png",
+      "filename": "stream-moment.png",
+      "url": "https://whop-assets-example.s3.amazonaws.com/uploads/image/2026-09-12/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+    }
+  ],
+  "fov": null,
+  "latest_proof_livestream_feed": null,
+  "operator": null,
+  "resolved_at": "2026-09-13T11:20:00.000Z",
+  "site": null,
+  "station": null,
+  "status": "approved",
+  "submitted_at": "2026-09-12T18:45:00.000Z",
+  "updated_at": "2026-09-13T11:20:00.000Z",
+  "worker": {
+    "id": "user_xxxxxxxxxxxxxx",
+    "name": "Dana Whitfield",
+    "profile_picture": { "url": "https://ui-avatars.com/api/" },
+    "username": "danawhitfield"
+  }
+}

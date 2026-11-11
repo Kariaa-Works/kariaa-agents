@@ -1,0 +1,9 @@
+{
+  "_fixture": "Hand-made from the GitHub REST reference example for POST /repos/{owner}/{repo}/issues/{issue_number}/comments (https://docs.github.com/en/rest/issues/comments#create-an-issue-comment): writes were never run live.",
+  "id": 1,
+  "html_url": "https://github.com/tscircuit/pcb-viewer/issues/163#issuecomment-1",
+  "body": "/attempt #163",
+  "user": { "login": "octocat", "type": "User" },
+  "created_at": "2026-10-27T12:00:00Z",
+  "updated_at": "2026-10-27T12:00:00Z"
+}

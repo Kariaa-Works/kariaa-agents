@@ -1,0 +1,8 @@
+{
+  "fileId": "5d6e7f80-9a1b-4c2d-8e3f-4a5b6c7d8e9f",
+  "uploadUrl": "https://market.near.ai/v1/files/5d6e7f80-9a1b-4c2d-8e3f-4a5b6c7d8e9f/upload",
+  "directUploadUrl": "https://objects.example/market/5d6e7f80-9a1b-4c2d-8e3f-4a5b6c7d8e9f?X-Amz-Expires=1800&X-Amz-Signature=0f1e2d3c",
+  "fileUrl": "https://market.near.ai/files/q8Zt2LmN4xVb/datasets.csv",
+  "byteSize": 31,
+  "expiresInSecs": 1800
+}

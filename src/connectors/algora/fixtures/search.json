@@ -1,0 +1,155 @@
+{
+  "total_count": 25,
+  "incomplete_results": false,
+  "items": [
+    {
+      "url": "https://api.github.com/repos/coollabsio/coolify/issues/2378",
+      "repository_url": "https://api.github.com/repos/coollabsio/coolify",
+      "html_url": "https://github.com/coollabsio/coolify/issues/2378",
+      "id": 2340615313,
+      "number": 2378,
+      "title": "[Feature]: Add more granular permissions and user roles.",
+      "state": "open",
+      "comments": 32,
+      "created_at": "2024-06-07T14:35:39Z",
+      "updated_at": "2026-10-25T07:41:47Z",
+      "closed_at": null,
+      "user": {
+        "login": "DeVoresyah",
+        "type": "User"
+      },
+      "labels": [
+        {
+          "name": "🛠️ Feature",
+          "color": "BB87FC"
+        },
+        {
+          "name": "👥 Core Team Only",
+          "color": "9191E0"
+        }
+      ],
+      "assignees": [],
+      "body": "### Description\n\nCurrently, team members apply for the entire general system. I want to have a specific team member for each resource. So, imagine that each resource has a new menu called members / team / team members where the admin can invite people to specific resources.\r\n![image](https://github.com/coollabsio/coolify/assets/8052370/7cf25b76-bfef-4c4c-96f6-3304f7360741)\n\n### Minimal Reproduction (if possible, example repository)\n\nn/a\n\n### Exception or Error\n\n_No response_\n\n### Version\n\nn/a"
+    },
+    {
+      "url": "https://api.github.com/repos/coollabsio/coolify/issues/2389",
+      "repository_url": "https://api.github.com/repos/coollabsio/coolify",
+      "html_url": "https://github.com/coollabsio/coolify/issues/2389",
+      "id": 2341711069,
+      "number": 2389,
+      "title": "[Feature]: Backup Manger in the UI",
+      "state": "open",
+      "comments": 53,
+      "created_at": "2024-06-08T15:48:14Z",
+      "updated_at": "2026-10-23T20:38:23Z",
+      "closed_at": null,
+      "user": {
+        "login": "peaklabs-dev",
+        "type": "User"
+      },
+      "labels": [
+        {
+          "name": "🛠️ Feature",
+          "color": "BB87FC"
+        },
+        {
+          "name": "👥 Core Team Only",
+          "color": "9191E0"
+        }
+      ],
+      "assignees": [
+        {
+          "login": "peaklabs-dev"
+        }
+      ],
+      "body": "### General Idea\r\nCurrently only databases are backed up. Also, only some databases have a restore option. See: https://github.com/coollabsio/coolify/issues/2501. Streamline database backups and offer a one click restore option without having to manually download and upload the backup. Also there should be a second checkbox that allows us to set container backups -> a container backup is just a backup of all the persistent data (volumes) of the container.\r\n\r\n\r\n### Detailed Description\r\n\r\nI think it should be pretty straightforward for the pro @andrasbacsai. I thought about all the points and how I would implement it below, hope it helps (can not implement it myself for now as I am not experi"
+    },
+    {
+      "url": "https://api.github.com/repos/tscircuit/file-server/issues/5",
+      "repository_url": "https://api.github.com/repos/tscircuit/file-server",
+      "html_url": "https://github.com/tscircuit/file-server/issues/5",
+      "id": 2940525692,
+      "number": 5,
+      "title": "Create download endpoint `/files/download?...` as well as `/files/download/[[file_path]]`",
+      "state": "open",
+      "comments": 41,
+      "created_at": "2025-03-22T17:46:12Z",
+      "updated_at": "2026-10-22T17:31:48Z",
+      "closed_at": null,
+      "user": {
+        "login": "seveibar",
+        "type": "User"
+      },
+      "labels": [
+        {
+          "name": "💎 Bounty",
+          "color": "4f46e5"
+        },
+        {
+          "name": "💰 Rewarded",
+          "color": "15803d"
+        }
+      ],
+      "assignees": [],
+      "body": "This will allow easy-to-use download urls\n\n/bounty $10"
+    },
+    {
+      "url": "https://api.github.com/repos/tscircuit/pcb-viewer/issues/163",
+      "repository_url": "https://api.github.com/repos/tscircuit/pcb-viewer",
+      "html_url": "https://github.com/tscircuit/pcb-viewer/issues/163",
+      "id": 2855638491,
+      "number": 163,
+      "title": "Remove `disableAutoFocus` in favor of `focusOnHover={false}`",
+      "state": "open",
+      "comments": 75,
+      "created_at": "2025-02-15T18:11:19Z",
+      "updated_at": "2026-10-19T14:40:32Z",
+      "closed_at": null,
+      "user": {
+        "login": "seveibar",
+        "type": "User"
+      },
+      "labels": [
+        {
+          "name": "💎 Bounty",
+          "color": "4f46e5"
+        }
+      ],
+      "assignees": [],
+      "body": "/bounty $3"
+    },
+    {
+      "url": "https://api.github.com/repos/coollabsio/coolify/issues/7655",
+      "repository_url": "https://api.github.com/repos/coollabsio/coolify",
+      "html_url": "https://github.com/coollabsio/coolify/issues/7655",
+      "id": 3735897685,
+      "number": 7655,
+      "title": "[Improvement]: Do not share all environment variables across all containers in a Compose project",
+      "state": "open",
+      "comments": 24,
+      "created_at": "2025-12-16T18:31:12Z",
+      "updated_at": "2026-10-16T17:32:06Z",
+      "closed_at": null,
+      "user": {
+        "login": "tadamcz",
+        "type": "User"
+      },
+      "labels": [
+        {
+          "name": "🔧 Improvement",
+          "color": "4EA7FC"
+        },
+        {
+          "name": "👥 Core Team Only",
+          "color": "9191E0"
+        },
+        {
+          "name": "⏸️ Hold",
+          "color": "483f57"
+        }
+      ],
+      "assignees": [],
+      "body": "### Problem Description\n\nWhen deploying a Docker Compose project, Coolify injects all environment variables into every container, regardless of which container they were defined for.\n\nFrom inspecting the \"Raw Docker compose\" in the UI, I believe this happens like this:\n  1. A single `.env` file is created containing ALL environment variables from the entire Docker Compose project\n  2. This `.env` file is automatically added to every container's `env_file:` directive\n\n### Security Implications\n\nThis seems to be a serious security issue. \n\nAny container in a multi-container Docker Compose project can read the secrets/credentials of every other container.\n\nExamples:\n  - In a Next.js + PostgreSQ"
+    }
+  ]
+}
