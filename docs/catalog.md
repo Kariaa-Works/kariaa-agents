@@ -17,6 +17,7 @@ Each platform is a folder under `src/connectors/` with its own README: what the 
 | [`yeswehack`](../src/connectors/yeswehack)                 | bug bounty  | find and read programs, scopes and reward tables                                   | none                                                                             |
 | [`printify`](../src/connectors/printify)                   | selling     | draft a product, upload a design, publish with a confirm token, read orders        | `PRINTIFY_API_TOKEN` (and `PRINTIFY_SHOP_ID` when the account has several shops) |
 | [`remotive`](../src/connectors/remotive)                   | jobs        | find and read remote job listings (the smallest connector: start here)             | none                                                                             |
+| [`remoteok`](../src/connectors/remoteok)                   | jobs        | find and read remote job listings; results link to the original Remote OK posting  | none                                                                             |
 | [`dice`](../src/connectors/dice)                           | jobs        | find and read tech jobs through Dice's MCP server (the example of a linked server) | none                                                                             |
 
 `work connectors` shows the same list with which keys are set. `work connect <platform>` says what a platform needs.
