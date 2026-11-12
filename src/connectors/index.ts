@@ -7,6 +7,7 @@ import { nearAgentMarket } from "./near-agent-market/index.js";
 import { opentask } from "./opentask/index.js";
 import { printify } from "./printify/index.js";
 import { remotive } from "./remotive/index.js";
+import { remoteok } from "./remoteok/index.js";
 import { superteamEarn } from "./superteam-earn/index.js";
 import { whopBounties } from "./whop-bounties/index.js";
 import { yeswehack } from "./yeswehack/index.js";
@@ -28,6 +29,7 @@ export const builtInConnectors: Connector[] = [
   yeswehack,
   printify,
   remotive,
+  remoteok,
   dice,
 ];
 
@@ -44,5 +46,6 @@ export {
   yeswehack,
   printify,
   remotive,
+  remoteok,
   dice,
 };
